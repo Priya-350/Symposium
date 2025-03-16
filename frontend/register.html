@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="register.css">
+    <link rel="icon" href="data:,">
+</head>
+<body>
+    <header>
+        <img src="images/gce_logo-removebg-preview.png" alt="gce salem logo">
+        
+        <div class="menu">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="Events.html">Events</a></li>
+            <li><a href="Schedule.html">Schedule</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </div>
+        <img class="click" src="images/menu.png">
+    </header>
+    <main>
+
+       <form id="register">
+          <h1>Register</h1>
+          <div>
+            <img src="images/icons8-male-user-32.png">
+            <input id="name" type="text" placeholder="Name" >  
+         </div>
+         <div>
+            <img src="images/icons8-email-50.png">
+            <input id="email" type="email" placeholder="Email" >  
+         </div>
+         <div>
+            <img src="images/icons8-password-24.png">
+            <input id="password" type="password" placeholder="Password" >  
+         </div>
+         <div>
+            <img src="images/icons8-phone-50.png">
+            <input id="phone" type="text" placeholder="Mobile Number" >  
+         </div>
+         <div>
+            <img src="images/icons8-department-30.png">
+            <select value="cse" id="dept" >
+                <option value="cse">CSE</option>
+                <option value="it">IT</option>
+                <option value="aids">AI & DS</option>
+                <option value="aiml">AI & ML</option>
+                <option value="ece">ECE</option>
+                
+            </select>
+         </div>
+         <div>
+            <img src="images/icons8-college-50.png">
+            <input type="text" id="college" placeholder="College Name" >  
+         </div>
+         <button type="submit" >Register</button>
+         <p>Already have an account?<a href="login.html">Login</a></p>
+       </form>
+
+
+
+    </main>
+    <footer>
+        <p>Copyright &copy; @2025 TechSpark Symposium. All Rights Reserved.</p>
+    </footer>
+    <div class="navbar hidden" >
+        <img class="cl" src="images/icons8-cancel-48.png">
+        <nav>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="Events.html">Events</a></li>
+            <li><a href="Schedule.html">Schedule</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </nav>
+      </div>
+    <script >  
+        
+        document.addEventListener("DOMContentLoaded", () => {
+    const menu = document.querySelector(".click");
+    const nav = document.querySelector(".navbar");
+    const cancel = document.querySelector(".cl");
+
+  
+        menu.addEventListener("click", () => {
+            nav.classList.remove("hidden");
+        });
+        cancel.addEventListener("click", () => {
+            nav.classList.add("hidden");
+        });
+   });
+   document.getElementById("register").addEventListener("submit", async (e) => {
+  e.preventDefault();
+ const baseUrl="http://localhost:3000"
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  const dept = document.getElementById("dept").value;
+  const college = document.getElementById("college").value;
+  const phone = document.getElementById("phone").value;
+
+  try {
+    const response = await fetch(`${baseUrl}/register`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, email, password,dept,college,phone }),
+    });
+
+    const data = await response.json();
+    if (response.ok) {
+      alert(data.message || "Registration successful!");
+    } else {
+      alert(data.message || "Registration failed.");
+    }
+  } catch (error) {
+    console.error("Error:", error);
+    alert("An error occurred. Please try again.");
+  }
+});
+
+      </script>
+</body>
+</html>

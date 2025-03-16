@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+    <header>
+        <img src="images/gce_logo-removebg-preview.png" alt="gce salem logo">
+        <div class="menu">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="Events.html">Events</a></li>
+            <li><a href="Schedule.html">Schedule</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </div>
+        <img class="click" src="images/menu.png">
+    </header>
+    <main>
+        <div class="about">
+            <h1>About the Event</h1>
+            <p>TechSpark - 2K'25 is the annual fest of Government College of Enginering, Salem-11, bringing together innovators, tech enthusiasts, and creative minds. With a mix of technical and non-technical events, workshops, and competitions, it serves as a platform for skill enhancement, networking, and groundbreaking ideas. Join us in pushing boundaries and shaping the future! 🚀🔥 </p>
+        </div>
+        <div class="w">
+            <div class="when" >
+                <div class="line">
+                    
+                    <p>WHEN??</p>
+                    <img src="images/time-removebg-preview.png" >
+                </div>
+                <h3>MARCH 15,Saturday,2025</h3>  
+            </div>
+            <div class="where">
+                <div class="line line1">
+                    
+                    <p>WHERE??</p>
+                    <img src="images/think3-removebg-preview.png" >
+                </div>
+                <h3>GCE SALEM,KARUPPUR,SALEM-11</h3>  
+            </div>
+        </div>
+        
+    </main>
+    <footer>
+        <p>Copyright &copy; @2025 TechSpark Symposium. All Rights Reserved.</p>
+    </footer>
+    <div class="navbar hidden" >
+        <img class="cl" src="images/icons8-cancel-48.png">
+        <nav>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="Events.html">Events</a></li>
+            <li><a href="Schedule.html">Schedule</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </nav>
+      </div>
+    <script >  
+        
+        document.addEventListener("DOMContentLoaded", () => {
+    const menu = document.querySelector(".click");
+    const nav = document.querySelector(".navbar");
+    const cancel = document.querySelector(".cl");
+
+  
+        menu.addEventListener("click", () => {
+            nav.classList.remove("hidden");
+        });
+        cancel.addEventListener("click", () => {
+            nav.classList.add("hidden");
+        });
+   });
+
+      </script>
+</body>
+</html>

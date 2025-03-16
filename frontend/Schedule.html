@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="Schedule.css">
+</head>
+<body>
+    <header>
+        <img src="images/gce_logo-removebg-preview.png" alt="gce salem logo">
+        
+        <div class="menu">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="Events.html">Events</a></li>
+            <li><a href="Schedule.html">Schedule</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </div>
+        <img class="click" src="images/menu.png">
+    </header>
+    <main>
+        <h2>Event Schedule</h2>
+        <h4>Here is our event schedule</h4>
+        <hr>
+        <div class="events">
+            <div class="event">
+                <p>09:00 AM</p>
+                <div class="loc1">
+                    <img src="images/code.jpg" >
+                    <div class="d">
+                        <h3>Registration <br></h3>
+                        <p>CSE Department</p>
+                    </div>
+                        
+                        
+                </div>
+            </div>
+            <div class="event">
+                <p>10:00 AM</p>
+                <div class="loc1">
+                    <img src="images/inaugrate.jpg" >
+                    <div>
+                        <h3>Inaugration<br></h3>
+                        <p>Seminar Hall</p>
+                    </div>
+                        
+                        
+                </div>
+            </div>
+            <div class="event">
+                <p>11:00 AM</p>
+                <div class="loc1">
+                    <img src="images/tech.jpg" >
+                    <div>
+                        <h3>Technical Events<br></h3>
+                        <p>Respective venues</p>
+                    </div>
+                        
+                        
+                </div>
+            </div>
+            <div class="event">
+                <p>1:00 PM</p>
+                <div class="loc1">
+                    <img src="images/lunch.png" >
+                    <div>
+                        <h3>Lunch Break <br></h3>
+                        <p>Classroom Complex</p>
+                    </div>
+                        
+                        
+                </div>
+            </div>
+            <div class="event">
+                <p>2:30 PM</p>
+                <div class="loc1">
+                    <img src="images/non tech.jpg" >
+                    <div>
+                        <h3>Non-Technical Events <br></h3>
+                        <p>Respective venues</p>
+                    </div>
+                        
+                        
+                </div>
+            </div>
+            <div class="event">
+                <p>4:00 PM</p>
+                <div class="loc1">
+                    <img src="images/valid.jpg" >
+                    <div>
+                        <h3>Validatory <br></h3>
+                        <p>Seminar Hall</p>
+                    </div>
+                        
+                        
+                </div>
+            </div>
+            <div class="event">
+                <p>5:00 PM</p>
+                <div class="loc1">
+                    <img src="images/bus.jpg" >
+                    <div>
+                        <h3>Departure<br></h3>
+                        <p>Bus Yard</p>
+                    </div>
+                        
+                        
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Copyright &copy; @2025 TechSpark Symposium. All Rights Reserved.</p>
+    </footer>
+    <div class="navbar hidden" >
+        <img class="cl" src="images/icons8-cancel-48.png">
+        <nav>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="Events.html">Events</a></li>
+            <li><a href="Schedule.html">Schedule</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </nav>
+      </div>
+    <script >  
+        
+        document.addEventListener("DOMContentLoaded", () => {
+    const menu = document.querySelector(".click");
+    const nav = document.querySelector(".navbar");
+    const cancel = document.querySelector(".cl");
+
+  
+        menu.addEventListener("click", () => {
+            nav.classList.remove("hidden");
+        });
+        cancel.addEventListener("click", () => {
+            nav.classList.add("hidden");
+        });
+   });
+
+      </script>
+</body>
+</html>

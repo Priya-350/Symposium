@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body onload="loadProfile()">
+    <header>
+        <img src="images/gce_logo-removebg-preview.png" alt="gce salem logo">
+        
+        <div class="menu">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="Events.html">Events</a></li>
+            <li><a href="Schedule.html">Schedule</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </div>
+        <img class="click" src="images/menu.png">
+    </header>
+<main>
+    <div class="sk">
+        <img id="log" src="images/icons8-male-user-48(1).png">
+        <h2>Profile Details</h2>
+        <div class="sk1">
+            <h1>Bio</h1>
+            <div class="bx">
+                <label ><img src="images/icons8-male-user-32.png">Name</label>
+                <input id="name" type="text"  readonly>
+            </div>
+            <div class="bx">
+                <label ><img src="images/icons8-email-50.png">Email</label>
+                <input id="email" type="text"  readonly>
+            </div>
+            <div class="bx">
+                <label ><img src="images/icons8-user-id-24.png">User Id</label>
+                <input id="userId" type="text" readonly>
+            </div>
+            <div class="bx">
+                <label ><img src="images/icons8-department-30.png">Dept</label>
+                <input id="department" type="text" readonly>
+            </div>
+            <div class="bx">
+                <label ><img src="images/icons8-college-50.png">College</label>
+                <input id="college" type="text" readonly>
+            </div>
+            <div class="bx">
+                <label ><img src="images/icons8-phone-50.png">Mobile</label>
+                <input id="phone" type="text" readonly>
+            </div>
+           <div class="bx">
+            <button id="logoutButton">Logout</button>
+           </div>
+        </div>
+
+    </div>
+</main>
+    <footer>
+        <p>Copyright &copy; @2025 TechSpark Symposium. All Rights Reserved.</p>
+    </footer>
+    <div class="navbar hidden" >
+        <img class="cl" src="images/icons8-cancel-48.png">
+        <nav>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="Events.html">Events</a></li>
+            <li><a href="Schedule.html">Schedule</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </nav>
+      </div>
+    <script >  
+        
+        document.addEventListener("DOMContentLoaded", () => {
+    const menu = document.querySelector(".click");
+    const nav = document.querySelector(".navbar");
+    const cancel = document.querySelector(".cl");
+
+  
+        menu.addEventListener("click", () => {
+            nav.classList.remove("hidden");
+        });
+        cancel.addEventListener("click", () => {
+            nav.classList.add("hidden");
+        });
+   });
+   async function loadProfile() {
+  const token = sessionStorage.getItem("token");
+  if (!token) {
+    alert("You must be logged in to view this page.");
+    window.location.href = "login.html"; // Redirect to the login page
+    return;
+  }
+
+  try {
+    const response = await fetch("http://localhost:3000/profile", {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error("Unauthorized");
+    }
+
+    const userData = await response.json();
+
+    document.getElementById("name").value=userData.name;
+    document.getElementById("email").value=userData.email;
+    document.getElementById("userId").value=userData.userId;
+    document.getElementById("department").value=userData.dept;
+    document.getElementById("college").value=userData.college;
+    document.getElementById("phone").value=userData.phone;
+  } catch (error) {
+    console.error("Error:", error);
+    alert("Session expired. Please log in again.");
+    window.location.href = "login.html"; // Redirect to login page
+  }
+};
+
+document.getElementById("logoutButton").addEventListener("click", () => {
+  
+  sessionStorage.removeItem("token");
+
+ 
+  alert("You have been logged out.");
+  window.location.href = "home.html";
+});
+
+
+      </script>
+</body>
+</html>

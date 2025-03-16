@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    <header>
+        <img src="images/gce_logo-removebg-preview.png" alt="gce salem logo">
+        <div class="menu">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="Events.html">Events</a></li>
+            <li><a href="Schedule.html">Schedule</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </div>
+       <img class="click" src="images/menu.png">
+    </header>
+    <main>
+       <div>
+        <h2>Contact Us</h2>
+        <p>You are welcome to contact us anytime</p>
+        <hr>
+       </div>
+       <div class="contacts">
+        <div class="contact">
+            <img src="images/loc.gif">
+            <h4>ADDRESS</h4>
+            <p>Karuppur,Salem-636011</p>
+        </div>
+        <div class="contact">
+            <img src="images/phone.gif">
+            <h4>PHONE NUMBER</h4>
+            <p>+91 9342577054</p>
+        </div>
+        <div class="contact">
+            <img src="images/email.gif">
+            <h4>EMAIL</h4>
+            <p>priyaspd2004@gmail.com</p>
+        </div>
+       </div>
+       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5263.290775143006!2d78.08580019299936!3d11.712841884484252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babfa3400000001%3A0x786937287cc3f1eb!2sGovernment%20College%20of%20Engineering!5e0!3m2!1sen!2sin!4v1741455036696!5m2!1sen!2sin" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+       <div class="logo">
+        <img src="images/icons8-instagram.svg">
+        <img src="images/youtube.png">
+        <img src="images/icons8-twitter.svg">
+       </div>
+       <form>
+        <div class="form">
+            <div class="f">
+                <input type="text" placeholder="Your Name" >
+                <input type="email" placeholder="Your Email" >
+            </div>
+            
+            <input type="text" placeholder="Subject" >
+            <textarea placeholder="Message" rows="5" ></textarea>
+            <button type="submit">Send Message</button>
+        </div>
+       
+       </form>
+    </main>
+    <footer>
+        <p>Copyright &copy; @2025 TechSpark Symposium. All Rights Reserved.</p>
+    </footer>
+    <div class="navbar hidden" >
+        <img class="cl" src="images/icons8-cancel-48.png">
+        <nav>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="Events.html">Events</a></li>
+            <li><a href="Schedule.html">Schedule</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </nav>
+      </div>
+    <script >  
+        
+        document.addEventListener("DOMContentLoaded", () => {
+    const menu = document.querySelector(".click");
+    const nav = document.querySelector(".navbar");
+    const cancel = document.querySelector(".cl");
+
+  
+        menu.addEventListener("click", () => {
+            nav.classList.remove("hidden");
+        });
+        cancel.addEventListener("click", () => {
+            nav.classList.add("hidden");
+        });
+   });
+
+      </script>
+
+</body>
+</html>

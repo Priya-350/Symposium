@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="Events.css">
+</head>
+<body>
+    <header>
+        <img src="images/gce_logo-removebg-preview.png" alt="gce salem logo">
+        <div class="menu">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="Events.html">Events</a></li>
+            <li><a href="Schedule.html">Schedule</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </div>
+       <img class="click" src="images/menu.png">
+    </header>
+    <main >
+        <div>
+            <h1>TECH EVENTS</h1>
+            <div class="box1">
+                <div class="box">
+                    <img src="images/web.jpg">
+                    <h2>WEBSTRONAUTS</h2>
+                    <p>Create stunning websites in this hands-on competition.<br>
+                    Let your creativity shine through design!!</p>
+                    <a href="">READ MORE</a>
+                </div>
+                <div class="box">
+                    <img src="images/code.jpg">
+                    <h2>COSMO CODE</h2>
+                    <p>A fast-paced coding competition that tests programmers problem-solving skills and precision </p>
+                    <a href="">READ MORE</a>
+                </div>
+                <div class="box">
+                    <img src="images/gnidoc.jpg">
+                    <h2>GNIDOC</h2>
+                    <p>Decode the mystery! Reverse-engineer solutions, demonstrate your analytical prowess.</p>
+                    <a href="">READ MORE</a>
+                </div>
+                <div class="box">
+                    <img src="images/ppt.png">
+                    <h2>GALACTIC HACKSPRINT</h2>
+                    <p>Present innovative solutions to real-world problems. Inspire and engage with your ideas!</p>
+                    <a href="">READ MORE</a>
+                </div>
+                
+            </div>
+           
+          </div>
+          <div>
+              <h1 class="h">NON-TECH EVENTS</h1>
+              <div class="box1">
+                <div class="box">
+                    <img src="images/prompt.webp">
+                    <h2>PROMPT PARADOX</h2>
+                    <p>Generate prompts to match provided visuals in this creative challenge by using AI Tools!</p>
+                    <a href="">READ MORE</a>
+                </div>
+                <div class="box">
+                    <img src="images/hunt.jpg">
+                    <h2>UNIVERSAL HUNT</h2>
+                    <p>Embark on an exhilarating scavenger hunt. Solve clues and race to the finish!</p>
+                    <a href="">READ MORE</a>
+                </div>
+                <div class="box">
+                    <img src="images/story.jpg">
+                    <h2>GALACTIC TALES</h2>
+                    <p>Craft captivating stories using given words. Let your imagination run wild in this creative challenge!</p>
+                    <a href="">READ MORE</a>
+                </div>
+                <div class="box">
+                    <img src="images/quiz.jpg">
+                    <h2>QUIZSPAC</h2>
+                    <p>Test your knowledge in a fun, fast-paced quiz! Compete against peers for ultimate bragging rights.</p>
+                    <a href="">READ MORE</a>
+                </div>
+                
+            </div>
+          </div>
+          <div>
+              <h1 class="h">WORKSHOPS</h1>
+              <div class="box1">
+                <div class="box">
+                    <img src="images/ai.jpg">
+                    <h2>AI and the FUTURE </h2>
+                    <p>Explore the transformative potential of AI with our engaging workshop on "AI and the Future."</p>
+                    <a href="">READ MORE</a>
+                </div>
+                <div class="box">
+                    <img src="images/webdev.jpg">
+                    <h2>WEB DEVELOPMENT</h2>
+                    <p>Discover the web development through hands-on learning in our exciting workshops.</p>
+                    <a href="">READ MORE</a>
+                </div>
+                
+                
+            </div>
+          </div>
+    </main>
+    
+    <footer>
+        <p>Copyright &copy; @2025 TechSpark Symposium. All Rights Reserved.</p>
+    </footer>
+    <div class="navbar hidden" >
+        <img class="cl" src="images/icons8-cancel-48.png">
+        <nav>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="Events.html">Events</a></li>
+            <li><a href="Schedule.html">Schedule</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </nav>
+      </div>
+    <script >  
+        
+        document.addEventListener("DOMContentLoaded", () => {
+    const menu = document.querySelector(".click");
+    const nav = document.querySelector(".navbar");
+    const cancel = document.querySelector(".cl");
+
+  
+        menu.addEventListener("click", () => {
+            nav.classList.remove("hidden");
+        });
+        cancel.addEventListener("click", () => {
+            nav.classList.add("hidden");
+        });
+   });
+
+      </script>
+</body>
+</html>

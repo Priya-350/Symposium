@@ -1,0 +1,85 @@
+main{
+    margin-bottom:40px ;
+    margin-top: 180px;
+}
+
+.events {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.events .event {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    background-color: rgba(225, 194, 157, 0.768);
+    margin-top:30px ;
+    border-bottom:2px solid white ;
+    box-shadow:5px 5px 5px 5px white ;
+    padding:20px 60px;
+    width:550px;
+}
+main h2{
+    text-align: center;
+}
+.loc1{
+    display: flex;
+    column-gap: 12px;
+    justify-content:flex-start;
+    align-items:center;
+    width:250px;
+}
+.loc1 img{
+    width:50px;
+    height:50px;
+    border-radius: 50%;
+}
+.event p{
+    margin-top: 0px;
+    
+}
+
+main h2{
+    margin-top:-80px ;
+    font-size: 35px;
+}
+main h4{
+   
+   color: white;
+   font-size: 18px;
+   width: fit-content;
+   margin: 0 auto;
+   margin-top: -20px;
+   text-align: center;
+   
+}
+.d h3,.d p{
+    text-align:left;
+}
+main{
+    text-align: left;
+}
+
+main hr{
+    width:100px;
+    height:5px;
+    background-color: rgb(247, 41, 185);
+    outline:none;
+    border:none;
+    border-radius:20px ;
+    margin: 10px auto;
+}
+@media screen and (max-width:500px){
+     main{
+        margin-top: 150px;
+     }
+     main h4{
+        font-size: 17px;
+     }
+     .events .event{
+        width:85%;
+        padding:10px;
+     }
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symposium Login</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="register.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <header>
+        <img src="images/gce_logo-removebg-preview.png" alt="GCE Salem Logo">
+
+        <div class="menu">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="Events.html">Events</a></li>
+            <li><a href="Schedule.html">Schedule</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </div>
+        <img class="click" src="images/menu.png">
+    </header>
+
+    <main>
+        <form id="login">
+            <h1>Login</h1>
+
+            <div>
+                <img src="images/icons8-email-32.png">
+                <input type="email" id="email" placeholder="Email" required>
+            </div>
+
+            <div>
+                <img src="images/icons8-password-24.png">
+                <input type="password" id="password" placeholder="Password" required>
+            </div>
+
+            <button type="submit">Login</button>
+            <p>Create an account? <a href="register.html">Register</a></p>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 TechSpark Symposium. All Rights Reserved.</p>
+    </footer>
+
+    <div class="navbar hidden">
+        <img class="cl" src="images/icons8-cancel-48.png">
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="Events.html">Events</a></li>
+                <li><a href="Schedule.html">Schedule</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <script>
+        // Navbar Toggle
+        document.addEventListener("DOMContentLoaded", () => {
+            const menu = document.querySelector(".click");
+            const nav = document.querySelector(".navbar");
+            const cancel = document.querySelector(".cl");
+
+            menu.addEventListener("click", () => nav.classList.remove("hidden"));
+            cancel.addEventListener("click", () => nav.classList.add("hidden"));
+        });
+        document.getElementById("login").addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  try {
+    const response = await fetch("http://localhost:3000/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
+    });
+
+    const data = await response.json();
+    if (response.ok) {
+      // Store the JWT token in sessionStorage
+      sessionStorage.setItem("token", data.token);
+
+      // Redirect to the profile page
+      window.location.href = "profile.html";
+    } else {
+      alert(data.message || "Login failed. Please check your credentials.");
+    }
+  } catch (error) {
+    console.error("Error:", error);
+    alert("An error occurred. Please try again.");
+  }
+});
+
+
+    </script>
+
+</body>
+
+</html>

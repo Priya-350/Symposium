@@ -1,0 +1,86 @@
+main .about p{
+    width:70%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+   
+    margin-top: 30px;
+    color:rgb(219, 34, 34);
+}
+
+main{
+    margin-top: 100px;
+    margin-bottom:30px ;
+}
+.line{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    column-gap:10px;
+}
+.line p{
+    color:rgb(240, 201, 6);
+    font-size: 30px;
+}
+.line img{
+    width:150px;
+}
+.line1 img{
+    width:100px;
+}
+h3{
+    background-color:rgba(208, 47, 47, 0.675) ;
+    color:white;
+    padding: 10px 30px;
+    width:fit-content;
+    margin: 0 auto;
+    border-radius: 30px;
+}
+.lines{
+    display: flex;
+    flex-direction:row;
+}
+.w{
+    display:grid;
+    grid-template-columns: repeat(2,400px);
+    justify-content: center;
+    align-items: center;
+    gap:30px;
+    margin-top: 50px;
+}
+.when,.where{
+    border:2px solid white;
+    padding-bottom:30px;
+    box-shadow:5px 5px 5px 5px rgb(66, 66, 67) ;
+    border-radius:20px ;
+
+}
+.where img{
+    margin-bottom: 23px;
+}
+
+@media screen and (max-width:500px){
+    main{
+        margin-top: 80px;
+    }
+    main .about p{
+        width:78%;
+    }
+    .w{
+        grid-template-columns: repeat(1,80%);
+    }
+    .line p{
+        font-size:20px ;
+    }
+    .line1{
+        display:flex;
+        column-gap:40px;
+    }
+    h3{
+        font-size:14px ;
+        padding:10px ;
+    }
+}
