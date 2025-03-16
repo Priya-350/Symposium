@@ -14,7 +14,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // MongoDB connection
-mongoose.connect("mongodb://localhost:27017/symposiumDB");
+mongoose.connect("mongodb+srv://priyaspd2004:Priya19@media-server.4rp9v.mongodb.net/?retryWrites=true&w=majority&appName=media-server");
 
 // Define User schema and model
 const userSchema = new mongoose.Schema({
